@@ -14,6 +14,7 @@ public class TennisGameTest {
 		assertEquals("player1 win", TennisGame.game(5, 3));
 		assertEquals("player2 win", TennisGame.game(0, 4));
 		assertEquals("advantage - 40", TennisGame.game(5, 4));
+		assertEquals("deuce", TennisGame.game(6, 6));
 	}
 
 }
