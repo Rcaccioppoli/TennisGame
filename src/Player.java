@@ -1,31 +1,30 @@
+import TennisGameException.ScoreNotValidException;
 
 public class Player {
 	private String nome;
-	private int punteggio;
+	private Score punteggio;
 	
-	Player (String nome){
+	Player (String nome) throws ScoreNotValidException{
 		this.nome=nome;
-		punteggio=0;
+		punteggio=new Score(0);
 	}
 
-	public void setPunteggio(int punteggio)
+	public void setPunteggio(int punteggio) throws ScoreNotValidException
 	{
-		this.punteggio=punteggio;
+		this.punteggio=new Score(punteggio);
 	}
 	
-	public String getPunteggio()
+	public Score getPunteggio() throws ScoreNotValidException
 	{
-		String result="null";
-		
-		if (punteggio==0)
-			result="love";
-		else if (punteggio==1)
-			result="15";
-		else if (punteggio==2)
-			result="30";
-		else if (punteggio>=3)
-			result="40";
-		
-		return result;
+		Score copia=new Score(punteggio.getPoints());
+		return copia;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 }
