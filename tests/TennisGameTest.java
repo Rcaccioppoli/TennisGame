@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import TennisGameException.ScoreNotValidException;
+
 public class TennisGameTest {
 	
 	@Test
@@ -14,6 +16,7 @@ public class TennisGameTest {
 		assertEquals("player 2 win", Game.set(0, 4));
 		assertEquals("adv - 40", Game.set(5, 4));
 		assertEquals("deuce", Game.set(6, 6));
+		assertEquals(ScoreNotValidException.class.getName(), Game.set(-1, 9));
 	}
 
 }

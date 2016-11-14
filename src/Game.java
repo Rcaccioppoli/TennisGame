@@ -12,6 +12,9 @@ public class Game {
 		try {
 			p1=new Player("P1");
 			p2=new Player("P2");
+			
+			p1.setPunteggio(punteggio1);
+			p2.setPunteggio(punteggio2);
 		
 			for (int i=0,j=0; (i<=punteggio1 || j<=punteggio2); i++, j++)
 			{
@@ -24,7 +27,7 @@ public class Game {
 			}
 		} catch (ScoreNotValidException e) {
 			// TODO Auto-generated catch block
-			e.getMessage();
+			result=e.getClass().getName();
 		}	
 					
 		return result;
